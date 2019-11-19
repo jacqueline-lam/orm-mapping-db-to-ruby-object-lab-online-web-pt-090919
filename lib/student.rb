@@ -116,7 +116,8 @@ class Student
     test = DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
       binding.pry
-    end.first #without first -> returns [#<Student:0x00000000025aa4e0 @grade="10", @id=2, @name="Sam">]
+    end.first 
+    # Without .first -> returns [#<Student:0x00000000025aa4e0 @grade="10", @id=2, @name="Sam">]
     
   end
   
