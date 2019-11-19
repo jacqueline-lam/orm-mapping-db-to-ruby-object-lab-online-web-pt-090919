@@ -108,8 +108,10 @@ class Student
       SELECT *
       FROM students
       WHERE grade = 10 
+      LIMIT 1
     SQL
     # Q: Why can't I use LIMIT 1 instead
+    # [[2, "Sam", "10"], [3, "Jess", "10"]]
     
     test = DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
