@@ -111,8 +111,9 @@ class Student
     SQL
     # Q: Why can't I use LIMIT 1 instead
     
-    DB[:conn].execute(sql).map do |row|
+    test = DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
+      binding.pry
     end.first 
     
   end
